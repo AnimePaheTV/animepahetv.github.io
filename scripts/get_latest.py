@@ -12,16 +12,17 @@ def solve_ddos(client: httpx.Client) -> bool:
             },
         )
         ddgid = r.cookies.get("__ddgid_")
-        if ddgid:
-            client.get(
-                f"{BASE}/.well-known/ddos-guard/id/{ddgid}",
-                headers={
-                    "User-Agent": "Mozilla/5.0",
-                    "Referer": f"{BASE}/",
-                    "Accept": "image/webp,image/apng,image/*,*/*;q=0.8",
-                },
-            )
-            return True
+        if not ddgid:
+            return False
+        r2 = client.get(
+            f"{BASE}/.well-known/ddos-guard/id/{ddgid}",
+            headers={
+                "User-Agent": "Mozilla/5.0",
+                "Referer": f"{BASE}/",
+                "Accept": "image/webp,image/apng,image/*,*/*;q=0.8",
+            },
+        )
+        return r2.status_code == 200
     except Exception:
         pass
     return False
