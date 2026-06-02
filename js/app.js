@@ -29,10 +29,10 @@ function getFallbackPromo() {
     <div class="promo-card">
       <div class="promo-badge">POPULAR</div>
       <div class="promo-content">
-        <span class="promo-meta"><i class="fa-solid fa-fire"></i> Trending Now</span>
+        <span class="promo-meta"><i aria-hidden="true" class="fa-solid fa-fire"></i> Trending Now</span>
         <h3>Demon Slayer: Infinity Castle</h3>
         <p>Experience spectacular widescreen animation and cinematic subbed or dubbed action in full HD. Direct remote D-pad control and lightning fast player loads.</p>
-        <a href="#download" class="promo-btn"><i class="fa-solid fa-circle-down"></i> Get Widescreen App</a>
+        <a href="#download" class="promo-btn"><i aria-hidden="true" class="fa-solid fa-circle-down"></i> Get Widescreen App</a>
       </div>
     </div>
   `;
@@ -65,14 +65,4 @@ document.addEventListener("DOMContentLoaded", () => {
   initTheme();
   loadPromo();
 
-  // Add micro-interactions for buttons
-  const buttons = document.querySelectorAll(".btn-download, .promo-btn, .eco-mini-card");
-  buttons.forEach(btn => {
-    btn.addEventListener("mouseenter", () => {
-      btn.style.transform = "translateY(-2px)";
-    });
-    btn.addEventListener("mouseleave", () => {
-      btn.style.transform = "none";
-    });
-  });
 });
