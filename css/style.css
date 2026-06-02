@@ -403,7 +403,7 @@ body {
 /* ── Downloader Card Grid ── */
 .download-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 12px;
 }
 
@@ -430,7 +430,7 @@ body {
 }
 
 .download-block.featured-download {
-  grid-column: span 2;
+  grid-column: span 3;
   padding: 20px;
   border-color: var(--primary-light);
   background: var(--primary-glow);
