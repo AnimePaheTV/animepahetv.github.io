@@ -34,7 +34,7 @@ def generate(items):
     hero_img = escape(hero["snapshot"])
     badge = badge_today()
     label = f"{hero_title} &ndash; Episode {hero_ep}"
-    desc = f"Episode {hero_ep} of {hero_title} just aired. Stream in widescreen HD on Android TV, Firestick, or Mobile. Zero ads."
+    desc = f"Episode {hero_ep} of {hero_title} is now available to stream in widescreen HD on Android TV, Firestick, or Mobile. Zero ads."
 
     thumbs = ""
     for r in rest:
@@ -59,7 +59,7 @@ def generate(items):
             <p style="font-size:0.82rem;margin-bottom:10px">{desc}</p>
         </div>
         <div style="padding-top:8px;border-top:1px solid var(--border)">
-            <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);margin-bottom:4px">Today's Releases</div>
+            <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);margin-bottom:4px">Latest Episodes</div>
 {thumbs}        </div>
     </a>
     <a href="#download" class="promo-btn" style="margin-top:12px"><i aria-hidden="true" class="fa-solid fa-play"></i> Watch All Latest Episodes</a>
