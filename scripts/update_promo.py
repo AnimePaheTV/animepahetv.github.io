@@ -6,7 +6,7 @@ from html import escape
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BADGES = ["LATEST EPISODES", "NEW RELEASES", "NOW AIRING", "EPISODES"]
 
-def badge_today():
+def pick_badge():
     return BADGES[datetime.now().toordinal() % len(BADGES)]
 
 def get_all():
@@ -28,11 +28,11 @@ def generate(items):
     if not items:
         raise RuntimeError("No items to promote")
     hero = items[0]
-    rest = items[1:5]
+    rest = items[1:6]
     hero_title = escape(hero["title"])
     hero_ep = hero["episode"]
     hero_img = escape(hero["snapshot"])
-    badge = badge_today()
+    badge = pick_badge()
     label = f"{hero_title} &ndash; Episode {hero_ep}"
     desc = f"Episode {hero_ep} of {hero_title} is now available to stream in widescreen HD on Android TV, Firestick, or Mobile. Zero ads."
 

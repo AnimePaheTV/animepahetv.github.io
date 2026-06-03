@@ -46,7 +46,7 @@ async function loadPromo() {
   try {
     const resp = await fetch("promo.html");
     if (!resp.ok) {
-      throw new Error("Promo fragment not available today");
+      throw new Error("Promo fragment not available");
     }
     const html = await resp.text();
     if (html.trim().length > 0) {
