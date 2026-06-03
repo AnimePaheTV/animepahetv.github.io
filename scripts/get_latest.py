@@ -22,7 +22,7 @@ def get_latest():
               media {{
                 id
                 title {{ romaji english }}
-                coverImage {{ large }}
+                coverImage {{ medium }}
               }}
             }}
           }}
@@ -58,7 +58,7 @@ def get_latest():
             results.append({
                 "title": name,
                 "episode": s["episode"],
-                "snapshot": s["media"]["coverImage"]["large"],
+                "snapshot": s["media"]["coverImage"]["medium"],
                 "created_at": datetime.fromtimestamp(s["airingAt"], tz=timezone.utc).strftime("%H:%M UTC"),
                 "id": mid,
             })
