@@ -4,7 +4,7 @@ from datetime import datetime
 from html import escape
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BADGES = ["NEW EPISODE", "HOT EPISODE", "JUST AIRED", "FRESH RELEASE"]
+BADGES = ["LATEST EPISODES", "NEW RELEASES", "NOW AIRING", "EPISODES"]
 
 def badge_today():
     return BADGES[datetime.now().toordinal() % len(BADGES)]
@@ -59,7 +59,7 @@ def generate(items):
             <p style="font-size:0.82rem;margin-bottom:10px">{desc}</p>
         </div>
         <div style="padding-top:8px;border-top:1px solid var(--border)">
-            <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);margin-bottom:4px">More Airing Today</div>
+            <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);margin-bottom:4px">Today's Releases</div>
 {thumbs}        </div>
     </a>
     <a href="#download" class="promo-btn" style="margin-top:12px"><i aria-hidden="true" class="fa-solid fa-play"></i> Watch All Latest Episodes</a>

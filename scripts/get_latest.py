@@ -5,10 +5,8 @@ ANILIST = "https://graphql.anilist.co"
 
 def get_latest():
     now = datetime.now(timezone.utc)
-    start_of_day = datetime(now.year, now.month, now.day, tzinfo=timezone.utc)
-    end_of_day = start_of_day + timedelta(hours=23, minutes=59, seconds=59)
-    start_ts = int(start_of_day.timestamp())
-    end_ts = int(end_of_day.timestamp())
+    start_ts = int(now.timestamp())
+    end_ts = int((now + timedelta(hours=12)).timestamp())
 
     query = {
         "query": f"""
@@ -45,7 +43,7 @@ def get_latest():
         data = r.json()
         schedules = data.get("data", {}).get("Page", {}).get("airingSchedules", [])
         if not schedules:
-            print(json.dumps({"error": "No episodes airing today"}))
+            print(json.dumps({"error": "No episodes in the next 12 hours"}))
             sys.exit(1)
 
         seen = set()
