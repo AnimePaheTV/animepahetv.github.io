@@ -51,7 +51,7 @@ def generate(items):
 
     return f"""<div class="promo-card">
     <div class="promo-badge">{badge}</div>
-    <div>
+    <a href="#download" style="display:block;text-decoration:none;color:inherit">
         <div>
             <img src="{hero_img}" alt="{label}" style="width:100%;max-height:220px;object-fit:cover;border-radius:10px;margin-bottom:8px" loading="lazy">
             <span class="promo-meta"><i aria-hidden="true" class="fa-solid fa-fire"></i> New Release</span>
@@ -61,7 +61,7 @@ def generate(items):
         <div style="padding-top:8px;border-top:1px solid var(--border)">
             <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);margin-bottom:4px">More Airing Today</div>
 {thumbs}        </div>
-    </div>
+    </a>
     <a href="#download" class="promo-btn" style="margin-top:12px"><i aria-hidden="true" class="fa-solid fa-play"></i> Watch All Latest Episodes</a>
 </div>"""
 
