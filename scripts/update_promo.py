@@ -35,7 +35,7 @@ def generate(items):
     rest = items[1:]
     hero_title = escape(hero["title"])
     hero_ep = hero["episode"]
-    hero_img = escape(hero["snapshot"])
+    hero_img = escape(hero["snapshot_large"])
     badge = pick_badge()
     label = f"{hero_title} \u2013 Episode {hero_ep}"
     desc = f"Episode {hero_ep} of {hero_title} is now available to stream in widescreen HD on Android TV, Firestick, or Mobile. Zero ads."
@@ -44,7 +44,7 @@ def generate(items):
     for r in rest:
         t = escape(r["title"])
         ep = r["episode"]
-        img = escape(r["snapshot"])
+        img = escape(r["snapshot_medium"])
         thumbs += f"""        <div style="display:flex;align-items:center;gap:10px;padding:6px 0">
             <img src="{img}" alt="{t}" style="{thumb_style()}" loading="lazy">
             <div style="flex:1;min-width:0">
@@ -138,7 +138,7 @@ def main():
 
         if FB_PAGE_ID and FB_ACCESS_TOKEN:
             message = extract_facebook_message(promo)
-            hero_img = items[0].get("snapshot") if items else None
+            hero_img = items[0].get("snapshot_large") if items else None
             print("Posting to Facebook...")
             post_to_facebook(message, image_url=hero_img)
         else:
