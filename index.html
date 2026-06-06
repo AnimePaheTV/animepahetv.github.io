@@ -1,253 +1,186 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-    <!-- Basic Metadata -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnimePahe TV - Stream Anime Free on Android TV | Also: World Cup on Socolive TV</title>
-    <meta name="description" content="Watch unlimited anime free on Android TV. Also stream FIFA World Cup 2026 free on our sister app Socolive TV. 100% ad-free, D-pad optimized.">
-    <meta name="keywords" content="anime streaming free, android tv anime, FIFA World Cup 2026, world cup free stream, socolive tv, watch subbed anime, firestick anime">
-    <meta name="theme-color" content="#f43f5e">
-    <link rel="canonical" href="https://animepahetv.github.io/">
-    <link rel="icon" href="assets/icon.png" type="image/png">
-    
-    <!-- Open Graph (Facebook / LinkedIn) -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="AnimePahe TV - Stream Widescreen Anime on Android TV">
-    <meta property="og:description" content="Lightweight and beautiful client to stream subbed/dubbed anime on Smart TV screens. Fully D-pad remote compatible.">
-    <meta property="og:image" content="https://animepahetv.github.io/assets/icon.png">
-    <meta property="og:url" content="https://animepahetv.github.io/">
-    <meta property="og:site_name" content="AnimePahe TV">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnimePahe TV - Stream Anime Free on Android TV | Also: World Cup on Socolive TV</title>
+  <meta name="description" content="Watch unlimited anime free on Android TV. Also stream FIFA World Cup 2026 free on our sister app Socolive TV. 100% ad-free, D-pad optimized.">
+  <meta name="keywords" content="anime streaming free, android tv anime, FIFA World Cup 2026, world cup free stream, socolive tv, watch subbed anime, firestick anime">
+  <meta name="theme-color" content="#f43f5e">
+  <link rel="canonical" href="https://animepahetv.github.io/">
+  <link rel="icon" href="assets/icon.png" type="image/png">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="AnimePahe TV - Stream Widescreen Anime on Android TV">
-    <meta name="twitter:description" content="Lightweight client to stream subbed/dubbed anime on Smart TV screens. Fully D-pad remote compatible.">
-    <meta name="twitter:image" content="https://animepahetv.github.io/assets/icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AnimePahe TV - Stream Widescreen Anime on Android TV">
+  <meta property="og:description" content="Lightweight and beautiful client to stream subbed/dubbed anime on Smart TV screens. Fully D-pad remote compatible.">
+  <meta property="og:image" content="https://animepahetv.github.io/assets/icon.png">
+  <meta property="og:url" content="https://animepahetv.github.io/">
+  <meta property="og:site_name" content="AnimePahe TV">
 
-    <!-- Google Fonts & Font Awesome Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom Style System -->
-    <link rel="stylesheet" href="css/style.css">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AnimePahe TV - Stream Widescreen Anime on Android TV">
+  <meta name="twitter:description" content="Lightweight client to stream subbed/dubbed anime on Smart TV screens. Fully D-pad remote compatible.">
+  <meta name="twitter:image" content="https://animepahetv.github.io/assets/icon.png">
 
-    <!-- Schema.org SoftwareApplication JSON-LD Structured Data for Search Result Rich Snippets -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "AnimePahe TV",
-      "operatingSystem": ["Android", "Android TV", "Fire OS", "Windows"],
-      "applicationCategory": "MultimediaApplication",
-      "applicationSubCategory": "Video Streaming",
-      "description": "Watch your favorite subbed and dubbed anime episodes, movies, and specials in widescreen HD on Android TV and mobile devices. 100% free with D-pad remote support.",
-      "offers": {
-        "@type": "Offer",
-        "price": "0.00",
-        "priceCurrency": "USD"
-      }
-    }
-    </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="min-h-screen flex flex-col antialiased transition-colors duration-200" style="background:radial-gradient(circle at 80% 20%, rgba(244,63,94,0.08) 0%, transparent 50%),radial-gradient(circle at 20% 80%, rgba(244,63,94,0.08) 0%, transparent 50%),var(--c-bg);color:var(--c-text);font-family:var(--c-font);line-height:1.6">
 
-    <!-- Fixed Left Icon Card -->
-    <a href="/" class="fixed-icon-link" aria-label="AnimePahe TV home">
-        <img src="assets/icon.png" alt="AnimePahe TV Logo" class="fixed-icon" onerror="this.style.display='none'">
-    </a>
+  <a href="/" class="fixed top-4 left-4 z-50 flex items-center justify-center px-3 py-2 rounded-xl border border-[var(--c-border)] bg-[var(--c-surface)] shadow-sm hover:border-[var(--c-primary)] hover:-translate-y-0.5 transition-all duration-200 no-underline" aria-label="AnimePahe TV home">
+    <img src="assets/icon.png" alt="AnimePahe TV Logo" class="h-6 w-auto opacity-85 hover:opacity-100 transition-opacity" onerror="this.style.display='none'">
+  </a>
 
-    <!-- Top-Right Floating Theme FAB Switcher -->
-    <button class="theme-fab" onclick="toggleTheme()" aria-label="Toggle theme">
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/>
-            <line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/>
-            <line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-        </svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-        </svg>
-    </button>
+  <button class="theme-fab fixed top-4 right-4 z-50 w-10 h-10 rounded-xl border border-[var(--c-border)] bg-[var(--c-surface)] text-[var(--c-text-secondary)] cursor-pointer flex items-center justify-center shadow-sm hover:border-[var(--c-primary)] hover:text-[var(--c-primary)] hover:-translate-y-0.5 transition-all duration-200" onclick="toggleTheme()" aria-label="Toggle theme">
+    <svg class="icon-sun absolute w-[18px] h-[18px] transition-all duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/>
+      <line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/>
+      <line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+    </svg>
+    <svg class="icon-moon absolute w-[18px] h-[18px] transition-all duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:0;transform:scale(0.5) rotate(-90deg)">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>
+  </button>
 
-    <!-- Center Card Stack Layout Container -->
-    <main class="form-container">
-        <div class="state">
-            
-            <!-- 1. Form Header Block -->
-            <header class="form-header">
-                <img src="assets/icon.png" alt="AnimePahe TV Logo" class="form-logo">
-                <h1 id="form-title">AnimePahe TV</h1>
-                <div class="form-badge-version">
-                    <i aria-hidden="true" class="fa-solid fa-code-branch"></i> Version 1.0.0
-                </div>
-                <p id="form-desc">Stream unlimited anime subbed and dubbed series in premium rose-red widescreen formats on Android TV, Firestick, and Mobile screens. Zero subscription fees. <strong>100% Ad-Free App</strong></p>
-            </header>
+  <main class="flex-1 w-full max-w-[520px] mx-auto px-4 pt-20 pb-10">
+    <div class="fade-in flex flex-col gap-3">
 
-            <!-- World Cup Banner - Auto hides after July 19, 2026 -->
-            <div id="wc-banner" class="wc-banner" style="display:none;background:linear-gradient(135deg,#f43f5e,#e11d48);color:#fff;padding:16px;border-radius:12px;margin-bottom:16px;text-align:center">
-              <div class="wc-content">
-                <span class="wc-badge" style="display:inline-block;background:#fff;color:#f43f5e;padding:4px 12px;border-radius:20px;font-size:0.7rem;font-weight:800;margin-bottom:8px">FIFA WORLD CUP 2026</span>
-                <h3 style="margin:8px 0;font-size:1.2rem">104 Matches Free on Android TV</h3>
-                <a href="https://soco-live.github.io#download" class="wc-btn" style="display:inline-block;background:#fff;color:#f43f5e;padding:10px 20px;border-radius:8px;font-weight:700;text-decoration:none;margin-top:8px" target="_blank" rel="noopener"><i aria-hidden="true" class="fa-solid fa-futbol"></i> Watch Free on Socolive TV</a>
-              </div>
-            </div>
-            <script>
-              (function(){var wcEnd=new Date('2026-07-20').getTime();if(Date.now()<wcEnd){document.getElementById('wc-banner').style.display='block';}})();
-            </script>
-
-            <!-- 2. Featured Release Section -->
-            <span class="section-label"><i aria-hidden="true" class="fa-solid fa-star"></i> Featured Release</span>
-            <div id="dynamic-promo" class="dynamic-promo-container">
-                <div class="promo-placeholder">
-                    <div class="pulse-ring"></div>
-                    <p><i aria-hidden="true" class="fa-solid fa-circle-notch fa-spin"></i> Finding trending anime...</p>
-                </div>
-            </div>
-
-            <!-- 3. Downloader Card Grid -->
-            <span class="section-label" id="download"><i aria-hidden="true" class="fa-solid fa-cloud-arrow-down"></i> Secure Downloads</span>
-            <div class="download-grid">
-                
-                <!-- ARM64 -->
-                <div class="download-block">
-                    <div class="download-icon"><i aria-hidden="true" class="fa-solid fa-microchip"></i></div>
-                    <div class="download-title">Android ARM64</div>
-                    <div class="download-desc">For modern 64-bit Android TVs, Firesticks, and smartphones.</div>
-                    <a href="download/animepahe-tv-arm64-v8a.apk" class="btn-download" id="dl-arm64">
-                        <i aria-hidden="true" class="fa-solid fa-download"></i> Download APK (~31 MB)
-                    </a>
-                </div>
-
-                <!-- ARMv7 -->
-                <div class="download-block">
-                    <div class="download-icon"><i aria-hidden="true" class="fa-solid fa-microchip"></i></div>
-                    <div class="download-title">Android ARMv7</div>
-                    <div class="download-desc">For older 32-bit Android devices and budget TV sticks.</div>
-                    <a href="download/animepahe-tv-armeabi-v7a.apk" class="btn-download" id="dl-armv7">
-                        <i aria-hidden="true" class="fa-solid fa-download"></i> Download APK (~30 MB)
-                    </a>
-                </div>
-
-                <!-- x86_64 -->
-                <div class="download-block">
-                    <div class="download-icon"><i aria-hidden="true" class="fa-solid fa-laptop-code"></i></div>
-                    <div class="download-title">Android x86_64</div>
-                    <div class="download-desc">For Android emulators, PCs, and ChromeOS setups.</div>
-                    <a href="download/animepahe-tv-x86_64.apk" class="btn-download" id="dl-x64">
-                        <i aria-hidden="true" class="fa-solid fa-download"></i> Download APK (~31 MB)
-                    </a>
-                </div>
-
-                <!-- Universal APK (Spans 2 columns - Placed last as requested) -->
-                <div class="download-block featured-download">
-                    <div class="download-icon"><i aria-hidden="true" class="fa-solid fa-download"></i></div>
-                    <div class="download-title">Android Universal (All Devices)</div>
-                    <div class="download-desc">Works on all Android devices if you do not know your specific hardware type. Note: This is the heaviest build.</div>
-                    <a href="download/animepahe-tv.apk" class="btn-download" id="dl-universal">
-                        <i aria-hidden="true" class="fa-solid fa-download"></i> Download APK (~76 MB)
-                    </a>
-                </div>
-
-            </div>
-
-            <!-- Adsterra Native Banner Placement Block -->
-            <section class="ad-card">
-                <script async="async" data-cfasync="true" src="https://pl29611413.effectivecpmnetwork.com/2b8ea558aa98f927c2513f08546c2ec9/invoke.js"></script>
-                <div id="container-2b8ea558aa98f927c2513f08546c2ec9" style="width: 100%;"></div>
-            </section>
-
-            <!-- 4. Key App Features Card -->
-            <span class="section-label"><i aria-hidden="true" class="fa-solid fa-wand-magic-sparkles"></i> App Features</span>
-            <div class="field-card">
-                <div class="feature-list-container">
-                    
-                    <div class="feature-mini-card">
-                        <div class="feature-mini-icon"><i aria-hidden="true" class="fa-solid fa-gamepad"></i></div>
-                        <div class="feature-mini-text">
-                            <h4>TV D-pad Navigation</h4>
-                            <p>Engineered entirely for remote controllers. Seamless sequential focus traversal without air mouse widgets.</p>
-                        </div>
-                    </div>
-
-                    <div class="feature-mini-card">
-                        <div class="feature-mini-icon"><i aria-hidden="true" class="fa-solid fa-display"></i></div>
-                        <div class="feature-mini-text">
-                            <h4>Widescreen HD Content</h4>
-                            <p>Displays grid cards and widescreen previews in high-density cinematic resolution.</p>
-                        </div>
-                    </div>
-
-                    <div class="feature-mini-card">
-                        <div class="feature-mini-icon"><i aria-hidden="true" class="fa-solid fa-rectangle-ad"></i></div>
-                        <div class="feature-mini-text">
-                            <h4>100% Ad-Free Viewing</h4>
-                            <p>Enjoy uninterrupted entertainment. The smart TV and mobile apps contain absolutely zero overlay banners or popup ads.</p>
-                        </div>
-                    </div>
-
-                    <div class="feature-mini-card">
-                        <div class="feature-mini-icon"><i aria-hidden="true" class="fa-solid fa-bolt"></i></div>
-                        <div class="feature-mini-text">
-                            <h4>Zero Buffering Stream</h4>
-                            <p>ExoPlayer handles direct playback with high-speed range downloads, low RAM footprint and quick seek times.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Adsterra Native Banner (2nd placement) -->
-            <section class="ad-card">
-                <script async="async" data-cfasync="false" src="https://pl29611413.effectivecpmnetwork.com/2b8ea558aa98f927c2513f08546c2ec9/invoke.js"></script>
-                <div id="container-2b8ea558aa98f927c2513f08546c2ec9" style="width: 100%;"></div>
-            </section>
-
-            <!-- 5. Sister Apps Ecosystem -->
-            <span class="section-label"><i aria-hidden="true" class="fa-solid fa-share-nodes"></i> Sister Platforms</span>
-            <div class="eco-grid">
-                
-                <a href="https://soco-live.github.io" class="eco-mini-card" id="eco-socolive">
-                    <img src="https://soco-live.github.io/assets/icon.png" alt="Socolive TV Logo" class="eco-mini-icon" onerror="this.src='assets/icon.png'">
-                    <h4>Socolive TV</h4>
-                    <p>Live Football Matches & Realtime Scores</p>
-                </a>
-
-                <a href="https://nkiritv.github.io" class="eco-mini-card" id="eco-nkiri">
-                    <img src="https://nkiritv.github.io/assets/icon.png" alt="Nkiri TV Logo" class="eco-mini-icon" onerror="this.src='assets/icon.png'">
-                    <h4>Nkiri TV</h4>
-                    <p>Widescreen KDramas, Series & Movies</p>
-                </a>
-
-            </div>
-
-            <!-- Sleek Footer Powered Link -->
-            <div class="powered-by-link">
-                <span class="powered-by-text">Powered By</span>
-                <div class="powered-by-logo-wrap">
-                    <img src="assets/icon.png" alt="AnimePahe TV" class="powered-by-logo-icon">
-                    <span>AnimePahe TV</span>
-                </div>
-                
-                <div class="footer-disclaimer">
-                    &copy; 2026 AnimePahe TV. Built for widescreen remote ease. All media assets belong to their respective creators. 100% Secure & verified downloads.
-                </div>
-                
-                <!-- Adsterra Streaming Partner Sponsored Link (Preserved) -->
-                <p class="sponsored-link">
-                    <a href="https://www.effectivecpmnetwork.com/ab6ed4wvi?key=2c3b95bdbf8247c35e802e423eef2caa" rel="nofollow sponsored" target="_blank">Streaming partners</a>
-                </p>
-            </div>
-
+      <header class="text-center px-6 py-8 bg-[var(--c-surface)] rounded-2xl border border-[var(--c-border)] shadow-sm backdrop-blur-lg flex flex-col items-center">
+        <img src="assets/icon.png" alt="AnimePahe TV Logo" class="h-16 w-auto mb-4 drop-shadow-md">
+        <h1 class="text-[1.55rem] font-extrabold leading-tight -tracking-[0.02em] text-[var(--c-text)] mb-1">AnimePahe TV</h1>
+        <div class="inline-flex items-center gap-1 text-[0.75rem] font-bold text-[var(--c-primary)] bg-[rgba(244,63,94,0.08)] px-2.5 py-0.5 rounded-full mb-3 tracking-wide uppercase">
+          <i class="fa-solid fa-code-branch"></i> Version 1.0.0
         </div>
-    </main>
+        <p class="text-[var(--c-text-secondary)] text-[0.92rem] leading-relaxed max-w-[420px]">Stream unlimited anime subbed and dubbed series in premium rose-red widescreen formats on Android TV, Firestick, and Mobile screens. Zero subscription fees. <strong>100% Ad-Free App</strong></p>
+      </header>
 
-    <!-- Adsterra SocialBar Script Block (DO NOT REMOVE) -->
-    <script src="https://pl29611415.effectivecpmnetwork.com/8e/d7/a9/8ed7a94316e62acaaf3e5623f19588cf.js"></script>
+      <div id="wc-banner" class="hidden bg-gradient-to-r from-brand-500 to-brand-600 text-white p-4 rounded-xl mb-0 text-center" style="background:linear-gradient(135deg,#f43f5e,#e11d48)">
+        <div class="wc-content">
+          <span class="inline-block bg-white text-brand-500 px-3 py-1 rounded-full text-[0.7rem] font-extrabold mb-2">FIFA WORLD CUP 2026</span>
+          <h3 class="text-lg font-bold my-2">104 Matches Free on Android TV</h3>
+          <a href="https://soco-live.github.io#download" class="inline-block bg-white text-brand-500 px-5 py-2.5 rounded-lg font-bold no-underline mt-2 hover:bg-gray-100 transition-colors" target="_blank" rel="noopener"><i class="fa-solid fa-futbol"></i> Watch Free on Socolive TV</a>
+        </div>
+      </div>
+      <script>(function(){var d=document.getElementById('wc-banner');if(Date.now()<new Date('2026-07-20').getTime())d.style.display='block';})();</script>
 
-    <!-- App Logic Script -->
-    <script src="js/app.js"></script>
+      <span class="section-label text-[0.85rem] font-extrabold tracking-widest uppercase text-[var(--c-primary)] mt-3 mb-1 flex items-center gap-1.5"><i class="fa-solid fa-star"></i> Featured Release</span>
+      <div id="dynamic-promo" class="dynamic-promo-container">
+        <div class="promo-placeholder flex flex-col items-center justify-center py-8 gap-3 text-[var(--c-text-secondary)]">
+          <div class="pulse-ring"></div>
+          <p><i class="fa-solid fa-circle-notch fa-spin"></i> Finding trending anime...</p>
+        </div>
+      </div>
+
+      <span class="section-label text-[0.85rem] font-extrabold tracking-widest uppercase text-[var(--c-primary)] mt-3 mb-1 flex items-center gap-1.5" id="download"><i class="fa-solid fa-cloud-arrow-down"></i> Secure Downloads</span>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div class="download-block bg-[var(--c-surface)] border border-[var(--c-border)] rounded-2xl p-4 shadow-sm hover:border-[var(--c-primary)] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 flex flex-col items-center text-center gap-2 backdrop-blur-lg">
+          <div class="w-[38px] h-[38px] rounded-xl bg-[rgba(244,63,94,0.08)] text-[var(--c-primary)] flex items-center justify-center text-lg group-hover:bg-[var(--c-primary)] group-hover:text-white transition-all">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <div class="text-[0.9rem] font-bold text-[var(--c-text)]">Android ARM64</div>
+          <div class="text-[0.74rem] text-[var(--c-text-secondary)] leading-relaxed">For modern 64-bit Android TVs, Firesticks, and smartphones.</div>
+          <a href="download/animepahe-tv-arm64-v8a.apk" class="inline-flex items-center justify-center gap-1.5 px-4 py-1.5 rounded-full text-[0.78rem] font-bold bg-[rgba(244,63,94,0.08)] text-[var(--c-primary)] no-underline transition-all w-full hover:bg-[var(--c-primary)] hover:text-white" id="dl-arm64">
+            <i class="fa-solid fa-download"></i> Download APK (~31 MB)
+          </a>
+        </div>
+
+        <div class="download-block bg-[var(--c-surface)] border border-[var(--c-border)] rounded-2xl p-4 shadow-sm hover:border-[var(--c-primary)] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 flex flex-col items-center text-center gap-2 backdrop-blur-lg">
+          <div class="w-[38px] h-[38px] rounded-xl bg-[rgba(244,63,94,0.08)] text-[var(--c-primary)] flex items-center justify-center text-lg group-hover:bg-[var(--c-primary)] group-hover:text-white transition-all">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <div class="text-[0.9rem] font-bold text-[var(--c-text)]">Android ARMv7</div>
+          <div class="text-[0.74rem] text-[var(--c-text-secondary)] leading-relaxed">For older 32-bit Android devices and budget TV sticks.</div>
+          <a href="download/animepahe-tv-armeabi-v7a.apk" class="inline-flex items-center justify-center gap-1.5 px-4 py-1.5 rounded-full text-[0.78rem] font-bold bg-[rgba(244,63,94,0.08)] text-[var(--c-primary)] no-underline transition-all w-full hover:bg-[var(--c-primary)] hover:text-white" id="dl-armv7">
+            <i class="fa-solid fa-download"></i> Download APK (~30 MB)
+          </a>
+        </div>
+
+        <div class="download-block bg-[var(--c-surface)] border border-[var(--c-border)] rounded-2xl p-4 shadow-sm hover:border-[var(--c-primary)] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 flex flex-col items-center text-center gap-2 backdrop-blur-lg">
+          <div class="w-[38px] h-[38px] rounded-xl bg-[rgba(244,63,94,0.08)] text-[var(--c-primary)] flex items-center justify-center text-lg group-hover:bg-[var(--c-primary)] group-hover:text-white transition-all">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <div class="text-[0.9rem] font-bold text-[var(--c-text)]">Android x86_64</div>
+          <div class="text-[0.74rem] text-[var(--c-text-secondary)] leading-relaxed">For Android emulators, PCs, and ChromeOS setups.</div>
+          <a href="download/animepahe-tv-x86_64.apk" class="inline-flex items-center justify-center gap-1.5 px-4 py-1.5 rounded-full text-[0.78rem] font-bold bg-[rgba(244,63,94,0.08)] text-[var(--c-primary)] no-underline transition-all w-full hover:bg-[var(--c-primary)] hover:text-white" id="dl-x64">
+            <i class="fa-solid fa-download"></i> Download APK (~31 MB)
+          </a>
+        </div>
+
+        <div class="col-span-1 sm:col-span-3 bg-[rgba(244,63,94,0.08)] border border-[var(--c-primary-light)] rounded-2xl p-5 shadow-sm hover:border-[var(--c-primary)] hover:shadow-md transition-all duration-200 flex flex-col items-center text-center gap-2 backdrop-blur-lg">
+          <div class="w-[38px] h-[38px] rounded-xl bg-[rgba(244,63,94,0.08)] text-[var(--c-primary)] flex items-center justify-center text-lg transition-all">
+            <i class="fa-solid fa-download"></i>
+          </div>
+          <div class="text-[0.9rem] font-bold text-[var(--c-text)]">Android Universal (All Devices)</div>
+          <div class="text-[0.74rem] text-[var(--c-text-secondary)] leading-relaxed">Works on all Android devices if you do not know your specific hardware type. Note: This is the heaviest build.</div>
+          <a href="download/animepahe-tv.apk" class="inline-flex items-center justify-center gap-1.5 px-4 py-1.5 rounded-full text-[0.78rem] font-bold bg-[rgba(244,63,94,0.08)] text-[var(--c-primary)] no-underline transition-all w-full hover:bg-[var(--c-primary)] hover:text-white" id="dl-universal">
+            <i class="fa-solid fa-download"></i> Download APK (~76 MB)
+          </a>
+        </div>
+      </div>
+
+      <section class="bg-[var(--c-surface)] border border-[var(--c-border)] rounded-2xl p-3 shadow-sm flex justify-center overflow-hidden">
+        <script async="async" data-cfasync="true" src="https://pl29611413.effectivecpmnetwork.com/2b8ea558aa98f927c2513f08546c2ec9/invoke.js"></script>
+        <div id="container-2b8ea558aa98f927c2513f08546c2ec9" style="width:100%"></div>
+      </section>
+
+      <span class="section-label text-[0.85rem] font-extrabold tracking-widest uppercase text-[var(--c-primary)] mt-3 mb-1 flex items-center gap-1.5"><i class="fa-solid fa-wand-magic-sparkles"></i> App Features</span>
+      <div class="bg-[var(--c-surface)] border border-[var(--c-border)] rounded-2xl p-5 shadow-sm backdrop-blur-lg">
+        <div class="flex flex-col gap-2.5">
+          <div class="flex items-start gap-3.5 p-[14px_16px] bg-[var(--c-surface-alt)] rounded-xl border border-[var(--c-border)]">
+            <div class="text-[var(--c-primary)] text-base shrink-0 mt-0.5"><i class="fa-solid fa-gamepad"></i></div>
+            <div><h4 class="text-[0.85rem] font-bold text-[var(--c-text)] mb-0.5">TV D-pad Navigation</h4><p class="text-[0.78rem] text-[var(--c-text-secondary)] leading-relaxed">Engineered entirely for remote controllers. Seamless sequential focus traversal without air mouse widgets.</p></div>
+          </div>
+          <div class="flex items-start gap-3.5 p-[14px_16px] bg-[var(--c-surface-alt)] rounded-xl border border-[var(--c-border)]">
+            <div class="text-[var(--c-primary)] text-base shrink-0 mt-0.5"><i class="fa-solid fa-display"></i></div>
+            <div><h4 class="text-[0.85rem] font-bold text-[var(--c-text)] mb-0.5">Widescreen HD Content</h4><p class="text-[0.78rem] text-[var(--c-text-secondary)] leading-relaxed">Displays grid cards and widescreen previews in high-density cinematic resolution.</p></div>
+          </div>
+          <div class="flex items-start gap-3.5 p-[14px_16px] bg-[var(--c-surface-alt)] rounded-xl border border-[var(--c-border)]">
+            <div class="text-[var(--c-primary)] text-base shrink-0 mt-0.5"><i class="fa-solid fa-rectangle-ad"></i></div>
+            <div><h4 class="text-[0.85rem] font-bold text-[var(--c-text)] mb-0.5">100% Ad-Free Viewing</h4><p class="text-[0.78rem] text-[var(--c-text-secondary)] leading-relaxed">Enjoy uninterrupted entertainment. The smart TV and mobile apps contain absolutely zero overlay banners or popup ads.</p></div>
+          </div>
+          <div class="flex items-start gap-3.5 p-[14px_16px] bg-[var(--c-surface-alt)] rounded-xl border border-[var(--c-border)]">
+            <div class="text-[var(--c-primary)] text-base shrink-0 mt-0.5"><i class="fa-solid fa-bolt"></i></div>
+            <div><h4 class="text-[0.85rem] font-bold text-[var(--c-text)] mb-0.5">Zero Buffering Stream</h4><p class="text-[0.78rem] text-[var(--c-text-secondary)] leading-relaxed">ExoPlayer handles direct playback with high-speed range downloads, low RAM footprint and quick seek times.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <section class="bg-[var(--c-surface)] border border-[var(--c-border)] rounded-2xl p-3 shadow-sm flex justify-center overflow-hidden">
+        <script async="async" data-cfasync="false" src="https://pl29611413.effectivecpmnetwork.com/2b8ea558aa98f927c2513f08546c2ec9/invoke.js"></script>
+        <div id="container-2b8ea558aa98f927c2513f08546c2ec9" style="width:100%"></div>
+      </section>
+
+      <span class="section-label text-[0.85rem] font-extrabold tracking-widest uppercase text-[var(--c-primary)] mt-3 mb-1 flex items-center gap-1.5"><i class="fa-solid fa-share-nodes"></i> Sister Platforms</span>
+      <div class="grid grid-cols-2 gap-2.5">
+        <a href="https://soco-live.github.io" class="flex flex-col items-center text-center p-[14px_12px] bg-[var(--c-surface)] border border-[var(--c-border)] rounded-2xl no-underline gap-1.5 backdrop-blur-lg hover:border-[var(--c-primary)] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200" id="eco-socolive">
+          <img src="https://soco-live.github.io/assets/icon.png" alt="Socolive TV Logo" class="h-9 w-auto rounded-lg shadow-sm hover:scale-105 transition-transform" onerror="this.src='assets/icon.png'">
+          <h4 class="text-[0.82rem] font-bold text-[var(--c-text)]">Socolive TV</h4>
+          <p class="text-[0.7rem] text-[var(--c-text-secondary)] leading-relaxed">Live Football Matches & Realtime Scores</p>
+        </a>
+        <a href="https://nkiritv.github.io" class="flex flex-col items-center text-center p-[14px_12px] bg-[var(--c-surface)] border border-[var(--c-border)] rounded-2xl no-underline gap-1.5 backdrop-blur-lg hover:border-[var(--c-primary)] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200" id="eco-nkiri">
+          <img src="https://nkiritv.github.io/assets/icon.png" alt="Nkiri TV Logo" class="h-9 w-auto rounded-lg shadow-sm hover:scale-105 transition-transform" onerror="this.src='assets/icon.png'">
+          <h4 class="text-[0.82rem] font-bold text-[var(--c-text)]">Nkiri TV</h4>
+          <p class="text-[0.7rem] text-[var(--c-text-secondary)] leading-relaxed">Widescreen KDramas, Series & Movies</p>
+        </a>
+      </div>
+
+      <div class="flex flex-col items-center gap-2 mt-4 pt-5 border-t border-[var(--c-border)] text-center">
+        <span class="text-[10px] text-[var(--c-text-muted)] font-bold tracking-widest uppercase">Powered By</span>
+        <div class="flex items-center gap-1.5 text-[0.95rem] font-extrabold text-[var(--c-text-secondary)]">
+          <img src="assets/icon.png" alt="AnimePahe TV" class="h-5 w-auto"> AnimePahe TV
+        </div>
+        <div class="text-[0.72rem] text-[var(--c-text-muted)] leading-relaxed max-w-[440px] mx-auto">&copy; 2026 AnimePahe TV. Built for widescreen remote ease. All media assets belong to their respective creators. 100% Secure & verified downloads.</div>
+        <p class="text-[0.74rem] text-center mt-0.5"><a href="https://www.effectivecpmnetwork.com/ab6ed4wvi?key=2c3b95bdbf8247c35e802e423eef2caa" rel="nofollow sponsored" target="_blank" class="text-[var(--c-primary)] no-underline font-semibold hover:underline">Streaming partners</a></p>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="https://pl29611415.effectivecpmnetwork.com/8e/d7/a9/8ed7a94316e62acaaf3e5623f19588cf.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
