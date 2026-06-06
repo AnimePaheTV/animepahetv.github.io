@@ -113,7 +113,7 @@ def delete_previous_post():
     if not post_id:
         return
     try:
-        url = f"https://graph.facebook.com/v19.0/{post_id}"
+        url = f"https://graph.facebook.com/v25.0/{post_id}"
         params = {"access_token": FB_ACCESS_TOKEN}
         resp = requests.delete(url, params=params, timeout=15)
         if resp.status_code == 200:
@@ -130,10 +130,10 @@ def post_to_facebook(message, image_url=None):
 
     try:
         if image_url:
-            url = f"https://graph.facebook.com/v19.0/{FB_PAGE_ID}/photos"
+            url = f"https://graph.facebook.com/v25.0/{FB_PAGE_ID}/photos"
             data = {"url": image_url, "message": message, "access_token": FB_ACCESS_TOKEN}
         else:
-            url = f"https://graph.facebook.com/v19.0/{FB_PAGE_ID}/feed"
+            url = f"https://graph.facebook.com/v25.0/{FB_PAGE_ID}/feed"
             data = {"message": message, "access_token": FB_ACCESS_TOKEN}
 
         resp = requests.post(url, data=data, timeout=30)

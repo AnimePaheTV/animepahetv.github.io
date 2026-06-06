@@ -23,3 +23,4 @@ jobs:
           test -f .fb_last_post_id && git add .fb_last_post_id || true
           git diff --quiet && git diff --staged --quiet || git commit -m "promo update $(date +%Y-%m-%dT%H:%M)"
           git push
+      - run: curl -s -X DELETE -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/actions/runs/${{ github.run_id }}"
