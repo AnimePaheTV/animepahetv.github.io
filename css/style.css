@@ -774,15 +774,15 @@
     --transition: var(--c-transition);
   }
   [data-theme="dark"] {
-    --c-bg: #0b0f19;
-    --c-bg-alt: #111827;
-    --c-surface: #1f2937;
-    --c-surface-alt: #111827;
-    --c-border: rgba(255, 255, 255, 0.08);
+    --c-bg: #0f172a;
+    --c-bg-alt: #1e293b;
+    --c-surface: #1e293b;
+    --c-surface-alt: #0f172a;
+    --c-border: rgba(255, 255, 255, 0.15);
     --c-border-focus: var(--c-primary-light);
-    --c-text: #f9fafb;
-    --c-text-secondary: #9ca3af;
-    --c-text-muted: #6b7280;
+    --c-text: #f1f5f9;
+    --c-text-secondary: #cbd5e1;
+    --c-text-muted: #94a3b8;
     --bg: var(--c-bg);
     --bg-alt: var(--c-bg-alt);
     --surface: var(--c-surface);
@@ -792,6 +792,11 @@
     --text: var(--c-text);
     --text-secondary: var(--c-text-secondary);
     --text-muted: var(--c-text-muted);
+  }
+  [data-theme="dark"] .theme-fab {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: #334155;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
   }
   html {
     scroll-behavior: smooth;
@@ -814,10 +819,6 @@
   [data-theme="light"] .theme-fab .icon-sun {
     opacity: 1;
     transform: scale(1) rotate(0);
-  }
-  [data-theme="dark"] .theme-fab {
-    border-color: rgba(255, 255, 255, 0.25);
-    background: #374151;
   }
   [data-theme="dark"] .theme-fab .icon-sun {
     opacity: 0;

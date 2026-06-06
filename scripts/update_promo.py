@@ -32,7 +32,7 @@ def generate(items):
     if not items:
         raise RuntimeError("No items to promote")
     hero = items[0]
-    rest = items[1:]
+    rest = items[1:5]
     hero_title = escape(hero["title"])
     hero_ep = hero["episode"]
     hero_img = escape(hero["snapshot_large"])
