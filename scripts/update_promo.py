@@ -32,7 +32,7 @@ def generate(items):
     if not items:
         raise RuntimeError("No items to promote")
     hero = items[0]
-    rest = items[1:5]
+    rest = items[1:7]
     hero_title = escape(hero["title"])
     hero_ep = hero["episode"]
     hero_img = escape(hero["snapshot_large"])
@@ -93,15 +93,15 @@ def extract_facebook_message(promo_html):
         promo_html
     )
 
-    lines = [f"\u2728 {badge}"]
+    lines = [f"\u2728 {badge} on AnimePahe TV"]
     if hero_title:
         lines.append(f"\U0001f3ac {hero_title}")
-    for t in titles[:4]:
+    for t in titles[:6]:
         lines.append(f"\U0001f4fa {t}")
 
-    lines.append(f"\n\U0001f4f1 Stream FREE on Android TV/Firestick:")
+    lines.append(f"\n📲 Download AnimePahe TV to watch free:")
     lines.append(f"{SITE_URL}#download")
-    lines.append(f"\n#AnimePaheTV #FreeAnime #AndroidTV #AnimeStreaming")
+    lines.append(f"\n#AnimePaheTV #FreeAnime #AndroidTV")
     return "\n".join(lines)
 
 def post_to_facebook(message, image_url=None):
