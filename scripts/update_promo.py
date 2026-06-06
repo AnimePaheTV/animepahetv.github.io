@@ -104,15 +104,19 @@ def extract_facebook_message(promo_html):
     lines.append(f"\n#AnimePaheTV #FreeAnime #AndroidTV #AnimeStreaming")
     return "\n".join(lines)
 
-def post_to_facebook(message):
+def post_to_facebook(message, image_url=None):
     if not FB_PAGE_ID or not FB_ACCESS_TOKEN:
         print("Missing FB_PAGE_ID or FB_ACCESS_TOKEN - skipping Facebook post")
         return False
 
-    url = f"https://graph.facebook.com/v19.0/{FB_PAGE_ID}/feed"
-    data = {"message": message, "access_token": FB_ACCESS_TOKEN}
-
     try:
+        if image_url:
+            url = f"https://graph.facebook.com/v19.0/{FB_PAGE_ID}/photos"
+            data = {"url": image_url, "message": message, "access_token": FB_ACCESS_TOKEN}
+        else:
+            url = f"https://graph.facebook.com/v19.0/{FB_PAGE_ID}/feed"
+            data = {"message": message, "access_token": FB_ACCESS_TOKEN}
+
         resp = requests.post(url, data=data, timeout=30)
         result = resp.json()
         if "id" in result:
@@ -134,8 +138,9 @@ def main():
 
         if FB_PAGE_ID and FB_ACCESS_TOKEN:
             message = extract_facebook_message(promo)
+            hero_img = items[0].get("snapshot") if items else None
             print("Posting to Facebook...")
-            post_to_facebook(message)
+            post_to_facebook(message, image_url=hero_img)
         else:
             print("Facebook credentials not set - skipping Facebook post")
 
