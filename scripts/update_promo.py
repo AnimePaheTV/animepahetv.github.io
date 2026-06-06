@@ -6,6 +6,7 @@ from html import escape
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_URL = "https://animepahetv.github.io"
 BADGES = ["LATEST EPISODES", "NEW RELEASES", "NOW AIRING", "EPISODES"]
+LAST_POST_FILE = os.path.join(REPO, ".fb_last_post_id")
 
 FB_PAGE_ID = os.environ.get("FB_PAGE_ID")
 FB_ACCESS_TOKEN = os.environ.get("FB_PAGE_ACCESS_TOKEN")
@@ -104,10 +105,28 @@ def extract_facebook_message(promo_html):
     lines.append(f"\n#AnimePaheTV #FreeAnime #AndroidTV")
     return "\n".join(lines)
 
+def delete_previous_post():
+    if not os.path.exists(LAST_POST_FILE):
+        return
+    with open(LAST_POST_FILE) as f:
+        post_id = f.read().strip()
+    if not post_id:
+        return
+    try:
+        url = f"https://graph.facebook.com/v19.0/{post_id}"
+        params = {"access_token": FB_ACCESS_TOKEN}
+        resp = requests.delete(url, params=params, timeout=15)
+        if resp.status_code == 200:
+            print(f"Deleted previous post: {post_id}")
+        else:
+            print(f"Delete returned {resp.status_code}: {resp.text}", file=sys.stderr)
+    except Exception as e:
+        print(f"Delete failed: {e}", file=sys.stderr)
+
 def post_to_facebook(message, image_url=None):
     if not FB_PAGE_ID or not FB_ACCESS_TOKEN:
         print("Missing FB_PAGE_ID or FB_ACCESS_TOKEN - skipping Facebook post")
-        return False
+        return None
 
     try:
         if image_url:
@@ -120,14 +139,17 @@ def post_to_facebook(message, image_url=None):
         resp = requests.post(url, data=data, timeout=30)
         result = resp.json()
         if "id" in result:
-            print(f"Posted to Facebook: {result['id']}")
-            return True
+            post_id = result["id"]
+            print(f"Posted to Facebook: {post_id}")
+            with open(LAST_POST_FILE, "w") as f:
+                f.write(post_id)
+            return post_id
         else:
             print(f"Facebook API error: {json.dumps(result)}", file=sys.stderr)
-            return False
+            return None
     except Exception as e:
         print(f"Request failed: {e}", file=sys.stderr)
-        return False
+        return None
 
 def main():
     try:
@@ -139,6 +161,7 @@ def main():
         if FB_PAGE_ID and FB_ACCESS_TOKEN:
             message = extract_facebook_message(promo)
             hero_img = items[0].get("snapshot_large") if items else None
+            delete_previous_post()
             print("Posting to Facebook...")
             post_to_facebook(message, image_url=hero_img)
         else:
