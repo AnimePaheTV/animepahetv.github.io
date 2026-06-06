@@ -4,9 +4,9 @@
     <!-- Basic Metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnimePahe TV - Stream Unlimited Anime Free on Android TV & Firestick</title>
-    <meta name="description" content="Watch your favorite subbed and dubbed anime episodes, movies, and specials in widescreen HD on Android TV and mobile devices. 100% free with D-pad remote support.">
-    <meta name="keywords" content="AnimePahe TV, stream anime free, Android TV anime, watch subbed anime, firestick anime, latest episodes, rose-red TV app">
+    <title>AnimePahe TV - Stream Anime Free on Android TV | Also: World Cup on Socolive TV</title>
+    <meta name="description" content="Watch unlimited anime free on Android TV. Also stream FIFA World Cup 2026 free on our sister app Socolive TV. 100% ad-free, D-pad optimized.">
+    <meta name="keywords" content="anime streaming free, android tv anime, FIFA World Cup 2026, world cup free stream, socolive tv, watch subbed anime, firestick anime">
     <meta name="theme-color" content="#f43f5e">
     <link rel="canonical" href="https://animepahetv.github.io/">
     <link rel="icon" href="assets/icon.png" type="image/png">
@@ -85,6 +85,18 @@
                 </div>
                 <p id="form-desc">Stream unlimited anime subbed and dubbed series in premium rose-red widescreen formats on Android TV, Firestick, and Mobile screens. Zero subscription fees. <strong>100% Ad-Free App</strong></p>
             </header>
+
+            <!-- World Cup Banner - Auto hides after July 19, 2026 -->
+            <div id="wc-banner" class="wc-banner" style="display:none;background:linear-gradient(135deg,#f43f5e,#e11d48);color:#fff;padding:16px;border-radius:12px;margin-bottom:16px;text-align:center">
+              <div class="wc-content">
+                <span class="wc-badge" style="display:inline-block;background:#fff;color:#f43f5e;padding:4px 12px;border-radius:20px;font-size:0.7rem;font-weight:800;margin-bottom:8px">FIFA WORLD CUP 2026</span>
+                <h3 style="margin:8px 0;font-size:1.2rem">104 Matches Free on Android TV</h3>
+                <a href="https://soco-live.github.io#download" class="wc-btn" style="display:inline-block;background:#fff;color:#f43f5e;padding:10px 20px;border-radius:8px;font-weight:700;text-decoration:none;margin-top:8px" target="_blank" rel="noopener"><i aria-hidden="true" class="fa-solid fa-futbol"></i> Watch Free on Socolive TV</a>
+              </div>
+            </div>
+            <script>
+              (function(){var wcEnd=new Date('2026-07-20').getTime();if(Date.now()<wcEnd){document.getElementById('wc-banner').style.display='block';}})();
+            </script>
 
             <!-- 2. Featured Release Section -->
             <span class="section-label"><i aria-hidden="true" class="fa-solid fa-star"></i> Featured Release</span>
